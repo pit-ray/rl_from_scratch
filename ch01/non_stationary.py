@@ -25,7 +25,7 @@ class AlphaAgent:
         self.alpha = alpha
 
     def update(self, action, reward):
-        self.Qs[action] += (reward - self.Qs[action]) / self.alpha
+        self.Qs[action] += (reward - self.Qs[action]) * self.alpha
 
     def get_action(self):
         if np.random.rand() < self.epsilon:
